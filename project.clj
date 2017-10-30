@@ -1,6 +1,6 @@
 (defproject kwaltz "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "Indexing and search engine of German law books"
+  :url "http://github.com/fourtytoo/kwaltz"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
