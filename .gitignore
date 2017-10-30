@@ -1,5 +1,6 @@
 *.class
 *.jar
+*~
 /.lein-*
 /.nrepl-port
 /.repl
@@ -9,6 +10,7 @@
 /log/
 /out/
 /resources/public/js/compiled/**
+/resources/config.edn
 /target/
 figwheel_server.log
 pom.xml

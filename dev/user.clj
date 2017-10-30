@@ -8,10 +8,10 @@
             [ring.middleware.reload :refer [wrap-reload]]
             [figwheel-sidecar.repl-api :as figwheel]
             [garden-watcher.core :refer [new-garden-watcher]]
-            [kwaltz.config :refer [config]]))
+            [kwaltz.config :refer [api-config]]))
 
 (defn dev-system []
-  (assoc (kwaltz.application/app-system (config))
+  (assoc (kwaltz.application/app-system (api-config))
     :figwheel-system (fw-sys/figwheel-system (fw-config/fetch-config))
     :css-watcher (fw-sys/css-watcher {:watch-paths ["resources/public/css"]})
     :garden-watcher (new-garden-watcher ['kwaltz.styles])))

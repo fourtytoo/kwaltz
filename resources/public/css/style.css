@@ -1,3 +1,24 @@
-h1 {
-  text-decoration: underline;
+pre.wrap {
+  white-space: pre-wrap;
+}
+
+pre.wrap {
+  white-space: -moz-pre-wrap;
+}
+
+pre.wrap {
+  white-space: -pre-wrap;
+}
+
+pre.wrap {
+  white-space: -o-pre-wrap;
+}
+
+pre.wrap {
+  word-wrap: break-word;
+}
+
+ul#hits mark {
+  background: #F9D2A8;
+  border: 1px solid #EBC49A;
 }

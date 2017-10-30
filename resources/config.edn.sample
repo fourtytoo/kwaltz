@@ -1,0 +1,4 @@
+;; This is just an example.  Do not deploy this file as it is.
+
+{:api-port 10555
+ :scrape "https://www.gesetze-im-internet.de/aktuell.html"}

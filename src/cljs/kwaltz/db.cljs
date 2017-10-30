@@ -1,4 +1,11 @@
 (ns kwaltz.db)
 
 (def default-db
-  {:name "re-frame"})
+  {:active-panel :home-panel
+   :loading? false
+   :refreshing? false
+   :page 0
+   :page-size 10
+   :search-hits []
+   :paragraph nil
+   :bookmarks #{}})
