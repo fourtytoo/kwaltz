@@ -5,35 +5,9 @@
             [clojure.string :as string]
             [cljs.pprint :as pprint]
             [clojure.browser.dom :as dom]
-            [kwaltz.util :as util]
+            [kwaltz.util :refer :all]
             [cljsjs.typeahead-bundle]))
 
-(defn parent [e]
-  (.-parentElement e))
-
-(defn children [e]
-  (js->clj (goog.array/toArray (.-childNodes e))))
-
-(defn add-class [e c]
-  (let [classes (remove empty? (string/split (.-className e) #" +"))]
-    (when (not-any? (partial = c) classes)
-      (->> (conj classes c)
-           (string/join " ")
-           (set! (.-className e)))))
-  e)
-
-(defn remove-class [e c]
-  (let [classes (string/split (.-className e) #" +")]
-    (->> (remove (partial = c) classes)
-         (string/join " ")
-         (set! (.-className e))))
-  e)
-
-(defn target [e]
-  (.-target e))
-
-(defn current-target [e]
-  (.-currentTarget e))
 
 (defn spinner01 []
   [:div.spinner {:style {:padding-top "4em"}}
@@ -47,7 +21,7 @@
   (let [loading? (subscribe [:loading?])]
     (when @loading?
       [:div.loading.text-center {:style {:margin-top "3em"}}
-       [:div.three-quarters-loader "Loading..."]])))
+       [:div.loader "Loading..."]])))
 
 (defn dangerous
   ([comp content]
@@ -170,7 +144,7 @@
 (defn paragraph->html [string]
   (let [parts (->> string
                    split-at-em-tags
-                   (map util/remove-all-html-tags))]
+                   (map remove-all-html-tags))]
     (->> parts
          rest
          (partition-all 2 )
