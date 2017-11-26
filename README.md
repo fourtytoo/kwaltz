@@ -5,31 +5,27 @@ so populating an Elasticsearch database with text scraped online from
 the usual suspects.  It correlates the German and the English version
 so that searches can be done in both languages at the same time.
 
-Run it either from Emacs (M-x cider-jack-in-clojurescript) or from the
-shell prompt (`lein repl`).  From the REPL run
+Run it either from Emacs (`M-x cider-jack-in-clojurescript`) or from
+the shell prompt (`lein repl`).  From the REPL run
 
 ```clojure
 (kwaltz.application/reboot-database)
 ```
 
-that will populate your Elasticsearch database.
-
-Once complete, you should be able to point your browser to
-http://localhost:10555/# and use the UI.  Something like this should
-appear:
+that will populate your Elasticsearch database.  Once complete, you
+should be able to point your browser to http://localhost:10555/# and
+use the UI.  Something like this should appear:
 
 ![alt text](screenshot01.png "Sample screen shot")
 
 
 ##  Work in Progress
 
-Kwaltz is a work in progress and not meant to be useful to anyone
-without a modicum of familiarity with Clojure or, at least, trying to
-get one.
-
-It can be seen as showcase for a bunch of modern (as of late 2017)
-Clojure libraries, frameworks and paradigms, that can help you make
-the right choice for your own projects.
+At the moment Kwaltz is a proof of concept and not meant to be useful
+to anyone without a modicum of familiarity with Clojure or, at least,
+trying to get one.  It can be seen as showcase for a bunch of modern
+(as of late 2017) Clojure libraries, frameworks and paradigms, that
+can help you make a choice for your own projects.
 
 
 ## Development
