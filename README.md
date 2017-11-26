@@ -3,7 +3,7 @@
 Kwaltz is a tool to browse articles of the German law.  It does
 so populating an Elasticsearch database with text scraped online from
 the usual suspects.  It correlates the German and the English version
-so that searches can be done in either languages.
+so that searches can be done in both languages at the same time.
 
 Run it either from Emacs (M-x cider-jack-in-clojurescript) or from the
 shell prompt (`lein repl`).  From the REPL run
