@@ -5,7 +5,7 @@
             [clojure.string :as string]
             [cljs.pprint :as pprint]
             [clojure.browser.dom :as dom]
-            [kwaltz.util :refer :all]
+            [kwaltz.util :as u]
             [cljsjs.typeahead-bundle]))
 
 
@@ -72,7 +72,7 @@
                    :placeholder "Add notes here"
                    :value @notes
                    :on-change (fn [e]
-                                (add-class (dom/get-element "save") "btn-warning")
+                                (u/add-class (dom/get-element "save") "btn-warning")
                                 (reset! notes (-> e .-target .-value)))}]
        [:span.input-group-btn {}
         [:button.btn {:type "button"
@@ -161,11 +161,11 @@
 
 (defn deselect-elements [elements]
   (doseq [e elements]
-    (remove-class e "active")))
+    (u/remove-class e "active")))
 
 (defn select-element [element]
-  (-> element parent children deselect-elements)
-  (add-class element "active"))
+  (-> element u/parent u/children deselect-elements)
+  (u/add-class element "active"))
 
 (defn search-hits-list []
   (let [hits (subscribe [:search-hits])
@@ -179,7 +179,7 @@
        (map-indexed (fn [i hit]
                       [:li.list-group-item {:key i
                                             :on-click (fn [event]
-                                                        (-> event current-target select-element)
+                                                        (-> event u/current-target select-element)
                                                         (dispatch [:set-current-paragraph (:_id hit)]))}
                        [:h5.list-group-item-heading {:title (:_id hit)}
                         (get-in hit [:_source :designation])
